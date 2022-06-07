@@ -428,19 +428,12 @@ func (f *finder) readKey() error {
 	f.stateMu.Lock()
 	defer f.stateMu.Unlock()
 
-<<<<<<< HEAD
-	// Max number of lines to scroll by using PgUp and PgDn
-	const pageScrollBy = 15
-
-||||||| df4cd55
-=======
 	_, screenHeight := f.term.Size()
 	matchedLinesCount := len(f.state.matched)
 
 	// Max number of lines to scroll by using PgUp and PgDn
 	var pageScrollBy = screenHeight - 3
 
->>>>>>> new-move-keys
 	switch e := e.(type) {
 	case *tcell.EventKey:
 		switch e.Key() {
